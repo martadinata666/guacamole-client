@@ -115,6 +115,7 @@
             </plugin>
 
             <!-- Unit test using Jasmin and PhantomJS -->
+            <!--
             <plugin>
                 <groupId>com.github.searls</groupId>
                 <artifactId>jasmine-maven-plugin</artifactId>
@@ -136,6 +137,7 @@
                     <jsSrcDir>${project.build.directory}/${project.build.finalName}</jsSrcDir>
                 </configuration>
             </plugin>
+            -->
 
         </plugins>
     </build>
