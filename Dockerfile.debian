@@ -35,7 +35,7 @@ FROM maven:3-openjdk-11-slim AS builder
 # and thus can't be used within Docker)
 RUN    apt-get update                                \
     && apt-get upgrade -y                            \
-    && apt-get install -y software-properties-common \
+    && apt-get install -y software-properties-common gpg \
     && add-apt-repository -y ppa:mozillateam/ppa
 
 # Explicitly prefer packages from the Firefox PPA
