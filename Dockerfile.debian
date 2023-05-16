@@ -36,6 +36,7 @@ FROM maven:3-openjdk-11-slim AS builder
 RUN    apt-get update                                \
     && apt-get upgrade -y                            \
     && apt-get install -y software-properties-common gpg \
+    && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9BDB3D89CE49EC21 \
     && add-apt-repository -y ppa:mozillateam/ppa
 
 # Explicitly prefer packages from the Firefox PPA
