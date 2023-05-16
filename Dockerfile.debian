@@ -36,14 +36,13 @@ FROM maven:3-openjdk-11-slim AS builder
 RUN    apt-get update                                \
     && apt-get upgrade -y                            \
     && apt-get install -y software-properties-common gpg \
-    && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9BDB3D89CE49EC21 \
     && add-apt-repository -y ppa:mozillateam/ppa
 
 # Explicitly prefer packages from the Firefox PPA
 COPY guacamole-docker/mozilla-firefox.pref /etc/apt/preferences.d/
 
 # Install firefox browser for sake of JavaScript unit tests
-RUN apt-get update && apt-get install -y firefox
+RUN apt-get update && apt-get install -y --allow-unauthenticated firefox
 
 # Arbitrary arguments that can be passed to the maven build. By default, an
 # argument will be provided to explicitly unskip any skipped tests. To, for
