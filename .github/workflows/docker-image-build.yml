@@ -39,7 +39,7 @@ jobs:
           platforms: linux/amd64
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_IMAGE_NAME }}:git
           labels: ${{ steps.metaid.outputs.labels }}
-          file: Dockerfile.debian
+          file: Dockerfile
           
       - name: Build and Push repack
         uses: docker/build-push-action@v5
